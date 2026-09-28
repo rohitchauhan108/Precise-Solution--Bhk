@@ -14,10 +14,10 @@ const app = express();
 
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:3000",
+    origin: process.env.CLIENT_URL || "https://precisesolutionshk.com",
     credentials: true, // required so the browser sends/receives the httpOnly cookie
   })
-);
+);W
 app.use(express.json());
 app.use(cookieParser());
 
