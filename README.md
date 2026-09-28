@@ -70,3 +70,23 @@ must call `fetch` with `credentials: "include"`).
 - In production the login cookie is set with `SameSite=None; Secure`, which
   **requires HTTPS** on both the frontend and backend — most hosts provide
   this by default.
+
+### Current Render + cPanel deployment
+
+Use these values for the current deployment:
+
+- Render service URL: `https://precise-solution-bhk.onrender.com`
+- Frontend URL: `https://precisesolutionshk.com`
+- Render start command: `npm start`
+- Render environment variables:
+  - `NODE_ENV=production`
+  - `CLIENT_URL=https://precisesolutionshk.com`
+  - `PORT` may be omitted; Render provides it automatically.
+  - Set `MONGODB_URI`, `JWT_SECRET`, the three Cloudinary variables, and the
+    admin seed variables from your private deployment configuration.
+
+The frontend must be built with
+`NEXT_PUBLIC_API_URL=https://precise-solution-bhk.onrender.com`, then upload
+the contents of the frontend's generated `out` directory to the cPanel
+document root. Do not upload the `out` directory itself as an extra nested
+folder.
