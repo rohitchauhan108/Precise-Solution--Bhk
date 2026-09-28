@@ -17,7 +17,7 @@ app.use(
     origin: process.env.CLIENT_URL || "https://precisesolutionshk.com",
     credentials: true, // required so the browser sends/receives the httpOnly cookie
   })
-);W
+);
 app.use(express.json());
 app.use(cookieParser());
 
